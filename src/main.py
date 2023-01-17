@@ -748,12 +748,8 @@ def get_preferred():
         preferred = {
             "BTCUSDT": "15m",
             "ETHUSDT": "15m",
-            "XRPUSDT": "15m",
-            "BNBUSDT": "15m",
-            "ADAUSDT": "15m",
-            "DOGEUSDT": "15m",
-            "ETCUSDT": "15m",
-            "MATICUSDT": "15m",
+            "ALPHAUSDT": "15m",
+            "LDOUSDT": "15m",
         }
         symbol_list = list(preferred.keys())[:nr_charts]
 
@@ -771,6 +767,9 @@ def save_settings():
 
     print("Saved settings")
 
+
+import pyautogui
+
 if __name__ == "__main__":
 
     # Make PyQt5 related stuff
@@ -786,9 +785,8 @@ if __name__ == "__main__":
 
     # Background color surrounding the plots
     win.setStyleSheet("background-color:" + fplt.background)
-    width = ctypes.windll.user32.GetSystemMetrics(0)
-    height = ctypes.windll.user32.GetSystemMetrics(1)
-    win.resize(width*0.9, height*0.7)
+    """width ,height =  pyautogui.size()
+    win.resize(width*0.9, height*0.7)"""
 
     # Finplot requres this property
     win.axs = []
